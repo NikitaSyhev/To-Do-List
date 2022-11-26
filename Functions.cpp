@@ -9,12 +9,12 @@
 
 
 void show_menu() {
-	std::cout << "Âûáåðèòå äåéñòâèå:" << "\n\n";
-	std::cout << "1. Äîáàâèòü çàäà÷ó â ñâîé ñïèñîê." << '\n';
-	std::cout << "2. Ïîñìîòðåòü ñïèñîê çàäà÷." << '\n';
-	std::cout << "3. Íàéòè çàäà÷ó è ðàáîòàòü ñ íåé." << '\n';
-	std::cout << "4. Î÷èñòèòü ñïèñîê çàäà÷." << '\n';
-	std::cout << "5. Âûõîä èç ïðîãðàììû." << '\n';
+	std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ:" << "\n\n";
+	std::cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ñ‡Ñƒ Ð² ÑÐ²Ð¾Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº." << '\n';
+	std::cout << "2. ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº Ð·Ð°Ð´Ð°Ñ‡." << '\n';
+	std::cout << "3. ÐÐ°Ð¹Ñ‚Ð¸ Ð·Ð°Ð´Ð°Ñ‡Ñƒ Ð¸ Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ Ñ Ð½ÐµÐ¹." << '\n';
+	std::cout << "4. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº Ð·Ð°Ð´Ð°Ñ‡." << '\n';
+	std::cout << "5. Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹." << '\n';
 }
 
 void add_note(std::string& str) {
@@ -25,7 +25,7 @@ void add_note(std::string& str) {
 		out << str << '\n';
 	}
 	else
-		std::cout << "Îøèáêà äîáàâëåíèÿ çàäà÷è.\n";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð·Ð°Ð´Ð°Ñ‡Ð¸.\n";
 
 	out.close();
 }
@@ -37,11 +37,11 @@ void add_note_status(std::string& str) {
 
 	if (out.is_open()) {
 		std::string tmp;
-		out << "Ñðîê âûïîëíåíèÿ è ñòàòóñ: " << str + "\n";
+		out << "Ð¡Ñ€Ð¾Ðº Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ Ð¸ ÑÑ‚Ð°Ñ‚ÑƒÑ: " << str + "\n";
 	}
 	else
-		std::cout << "Îøèáêà îòêðûòèÿ ôàéëà.\n";
-	std::cout << "Çàäà÷à óñïåøíî äîáàâëåíà.\n";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°.\n";
+	std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð°.\n";
 
 	out.close();
 }
@@ -51,7 +51,7 @@ void show_note() {
 	in.open("file.txt");
 	std::string str;
 	if (!in.is_open()) {
-		std::cout << "Çàäà÷è åùå íå äîáàâëåíû. Äîáàâüòå èõ!.\n";
+		std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð¸ ÐµÑ‰Ðµ Ð½Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ñ‹. Ð”Ð¾Ð±Ð°Ð²ÑŒÑ‚Ðµ Ð¸Ñ…!.\n";
 		return;
 	}
 
@@ -71,13 +71,13 @@ void delete_all_notes() {
 std::string* find_one_note(const std::string& note_no_find, int& n_count) {
 	std::ifstream file("file.txt");
 	if (!file.is_open()) {
-		std::cout << "Çàäà÷è åùå íå äîáàâëåíû!\n";
+		std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð¸ ÐµÑ‰Ðµ Ð½Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ñ‹!\n";
 		return nullptr;
 	}
 	std::string one_note;
 	std::string* found_notes = nullptr;
 	std::string* found_notes_tmp = nullptr;
-	int count = 0; // êîëè÷åñòâî íàéäåííûõ çàìåòîê
+	int count = 0; // ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð½Ð°Ð¹Ð´ÐµÐ½Ð½Ñ‹Ñ… Ð·Ð°Ð¼ÐµÑ‚Ð¾Ðº
 	while (!file.eof()) {
 		getline(file, one_note);
 		if (one_note.find(note_no_find) != -1) {
@@ -102,14 +102,14 @@ std::string* find_one_note(const std::string& note_no_find, int& n_count) {
 
 
 
-// âîçâðàùàåò óêàçàòåëü íà ìàññèâ âñåõ çàäà÷
+// Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° Ð¼Ð°ÑÑÐ¸Ð² Ð²ÑÐµÑ… Ð·Ð°Ð´Ð°Ñ‡
 std::string* all_notes(int& n_count) {
 	std::string* all_notes_tmp = nullptr;
 	std::string* all_notes = nullptr;
 
 	std::ifstream file("file.txt");
 	if (!file.is_open()) {
-		std::cout << "Çàäà÷è åùå íå çàïèñàíû.\n";
+		std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð¸ ÐµÑ‰Ðµ Ð½Ðµ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ñ‹.\n";
 		exit(EXIT_FAILURE);
 	}
 	std::string one_note;

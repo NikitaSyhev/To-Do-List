@@ -1,21 +1,21 @@
 #pragma once
 
 
-void show_menu();  // функция вызова меню
+void show_menu();  // С„СѓРЅРєС†РёСЏ РІС‹Р·РѕРІР° РјРµРЅСЋ
 
-void add_note(std::string& str); //функция добавления заметок
+void add_note(std::string& str); //С„СѓРЅРєС†РёСЏ РґРѕР±Р°РІР»РµРЅРёСЏ Р·Р°РјРµС‚РѕРє
 
-void add_note_status(std::string& str); // функция добавления даты выполнения и статуса выполнения задач
+void add_note_status(std::string& str); // С„СѓРЅРєС†РёСЏ РґРѕР±Р°РІР»РµРЅРёСЏ РґР°С‚С‹ РІС‹РїРѕР»РЅРµРЅРёСЏ Рё СЃС‚Р°С‚СѓСЃР° РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РґР°С‡
 
-void show_note();//функция показа всех заметок
+void show_note();//С„СѓРЅРєС†РёСЏ РїРѕРєР°Р·Р° РІСЃРµС… Р·Р°РјРµС‚РѕРє
 
-void delete_all_notes();// функция удаления заметок
+void delete_all_notes();// С„СѓРЅРєС†РёСЏ СѓРґР°Р»РµРЅРёСЏ Р·Р°РјРµС‚РѕРє
 
-std::string* find_one_note(const std::string& note_no_find, int &n_count);   //функция поиска задачи по ключевому слову
-
-
+std::string* find_one_note(const std::string& note_no_find, int &n_count);   //С„СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° Р·Р°РґР°С‡Рё РїРѕ РєР»СЋС‡РµРІРѕРјСѓ СЃР»РѕРІСѓ
 
 
-std::string* all_notes(int& n_count); // копирование заметок в массив
 
-void remove_one_note(); // удаление 1 заметки
+
+std::string* all_notes(int& n_count); // РєРѕРїРёСЂРѕРІР°РЅРёРµ Р·Р°РјРµС‚РѕРє РІ РјР°СЃСЃРёРІ
+
+void remove_one_note(); // СѓРґР°Р»РµРЅРёРµ 1 Р·Р°РјРµС‚РєРё
